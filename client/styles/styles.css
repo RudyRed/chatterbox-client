@@ -47,7 +47,7 @@ body {
 }
 
 form {
-    padding: 20px;
+    padding: 10px;
     padding-left: 0;
     margin-bottom: 20px;
 }
@@ -87,6 +87,12 @@ form input[type=text] {
 .spinner img {
     padding: 10px;
 }
+
+textarea {
+    width: 500px;
+    height: 100px;
+}
+
 
 .friend {
     color: #fff;

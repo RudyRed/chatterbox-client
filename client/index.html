@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>chatterbox</title>
     <link rel="stylesheet" href="styles/styles.css">
@@ -10,32 +11,40 @@
     <script src="bower_components/underscore/underscore.js"></script>
 
     <script>
-      // YOU DO NOT NEED TO EDIT THIS CODE
-      if (!/(&|\?)username=/.test(window.location.search)) {
-        var newSearch = window.location.search;
-        if (newSearch !== '' & newSearch !== '?') {
-          newSearch += '&';
+        // YOU DO NOT NEED TO EDIT THIS CODE
+        if (!/(&|\?)username=/.test(window.location.search)) {
+            var newSearch = window.location.search;
+            if (newSearch !== '' & newSearch !== '?') {
+                newSearch += '&';
+            }
+            newSearch += 'username=' + (prompt('What is your name?') || 'anonymous');
+            window.location.search = newSearch;
         }
-        newSearch += 'username=' + (prompt('What is your name?') || 'anonymous');
-        window.location.search = newSearch;
-      }
+
     </script>
     <!-- your scripts -->
     <script src="env/config.js"></script>
-    <script src="scripts/app.js"></script>  
-    <script src="scripts/init.js"></script>      
-  </head>
-  <body>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/init.js"></script>
+</head>
+
+<body>
     <div id="main">
-      <h1>chatterbox</h1>
-      <select name="cars">
-        <option id ="room" value="allRooms">All Rooms</option>
-      </select>
-      <textarea name= 'message box' id='comments' placeholder="type message">
-        
-      </textarea>
+        <h1>chatterbox</h1>
+        <div>
+            Room:
+            <select id="selectRoom">
+                <option value="chatRooms">Lobby</option>
+                <option value="chatRooms">Stacy's Room</option>
+                <option value="chatRooms">Stacy Mom's Room</option>
+            </select>
+        </div>
+        <form action="#" id="send" method="post">
+            <textarea name='message box' id='comments' placeholder="type message"></textarea>
+            <button class="submit">submit</button>
+        </form>
     </div>
-    
-    <div id="chats"></div>
-  </body>
+    <div id="chats">Messages:</div>
+</body>
+
 </html>
