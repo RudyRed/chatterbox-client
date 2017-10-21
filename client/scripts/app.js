@@ -14,8 +14,8 @@ $( document ).ready(function() {
   
   app.fetch = function () {
     $.ajax({
+      url: 'http://parse.sfs.hackreactor.com/chatterbox/classes/messages',
       type: 'GET',
-      url: undefined,
       success: function (resp) {
         console.log(resp);
       },
@@ -32,6 +32,18 @@ $( document ).ready(function() {
   app.renderMessage = function ({text}) {
     $('#chats').append(`<p>${text}</p>`);
   }; 
+  app.renderRoom = function (roomName) {
+    $(`<h2>${roomName}</h2>`).appendTo('#roomSelect');
+    
+  };
 
+  app.handleUsernameClick = function() {
+    
+  };
+
+  app.handleSubmit = function() {
+  
+  };
+  
 
 });
