@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
   window.app = {};
-  
+  app.savedMessages = [];
   app.init = function () {};
   
   app.send = function (data) {
@@ -13,17 +13,18 @@ $( document ).ready(function() {
   };
   
   app.fetch = function () {
-    $.ajax({
+     $.ajax({
       url: 'http://parse.sfs.hackreactor.com/chatterbox/classes/messages',
       type: 'GET',
-      success: function (resp) {
-        console.log(resp);
+      success: function (results) {
+        app.savedMessages = results['results'];
       },
       error: function () {
         console.log('error');
       }
     });
   };
+
 
   app.clearMessages = function () {
     $('#chats').empty();
